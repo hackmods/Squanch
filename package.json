@@ -9,7 +9,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hackmods/Squanch.git"
+    "url": "https://github.com/hackmods/Squanch.git",
+    "name": "squanch",
+    "version": "1.0.2",
+    "description": "A sqaunchy library to replace words"
   },
   "keywords": [
     "NPM",

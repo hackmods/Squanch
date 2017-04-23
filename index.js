@@ -43,7 +43,7 @@ module.exports = function(req = '', result) {
                         }
                         
 
-                        rng = Math.floor((Math.random() * 5) + rng);
+                        rng += Math.floor((Math.random() * 5) + 1);
                 }
             }
                 else
