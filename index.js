@@ -11,7 +11,7 @@ module.exports = function(req = '', result) {
    let text =  req.split(" ");
   
    let rng = 0;
-   rng = Math.floor((Math.random() * 5) + rng);
+   rng = Math.floor((Math.random() * 7) + rng);
 
    let squanched = ''; 
    if(text.length < 2)
@@ -26,28 +26,29 @@ module.exports = function(req = '', result) {
                 if(text[i].length > 4)
                 {
                         rng++;
+                        squanched += `${text[i]} `;
                 }
                 else {
                     if(text[i].substr(text[i].length - 2) == "ed")
-                            squanched += `squanched`;
+                            squanched += `squanched `;
                         else if (text[i].substr(text[i].length - 3) == "ing")
-                            squanched += `squanching`;
+                            squanched += `squanching `;
                         else if (text[i].substr(text[i].length - 3) == "y")
-                            squanched += `squanchy`;
+                            squanched += `squanchy `;
                         else
                         {
                             if((rng % 2 == 0) == true)
                                 squanched += `squanch `;
                             else
-                                squanched += `squanchy`;
+                                squanched += `squanchy `;
                         }
                         
 
-                        rng += Math.floor((Math.random() * 5) + 1);
+                        rng += Math.floor((Math.random() * 7) + 1);
                 }
             }
-                else
-                    squanched += `${text[i]} `;
+            else
+                squanched += `${text[i]} `;
         }
     }
     return squanched;

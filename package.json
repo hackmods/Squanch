@@ -1,6 +1,6 @@
 {
   "name": "squanch",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A sqaunchy library to replace words",
   "main": "index.js",
   "scripts": {
