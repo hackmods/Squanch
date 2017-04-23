@@ -29,18 +29,24 @@ module.exports = function(req = '', result) {
                         squanched += `${text[i]} `;
                 }
                 else {
+                    let s = 'squanch';
+                    if(s.toUpperCase == s)
+                        s = 'SQUANCH';
+                    else(s.charAt(0).toUpperCase == s.charAt(0))
+                        s= 'Squanch';
+
                     if(text[i].substr(text[i].length - 2) == "ed")
-                            squanched += `squanched `;
+                            squanched += `${s}ed `;
                         else if (text[i].substr(text[i].length - 3) == "ing")
-                            squanched += `squanching `;
+                            squanched += `${s}ing `;
                         else if (text[i].substr(text[i].length - 3) == "y")
-                            squanched += `squanchy `;
+                            squanched += `${s}y `;
                         else
                         {
                             if((rng % 2 == 0) == true)
-                                squanched += `squanch `;
+                                squanched += `${s} `;
                             else
-                                squanched += `squanchy `;
+                                squanched += `${s}y `;
                         }
                         
 
