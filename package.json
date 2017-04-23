@@ -1,14 +1,15 @@
 {
   "name": "squanch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A sqaunchy library to replace words",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "node_modules/.bin/mocha --reporter spec",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hackmods/Squanch.git"
+    "url": "https://github.com/hackmods/Squanch.git"
   },
   "keywords": [
     "NPM",
@@ -26,5 +27,8 @@
   "dependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.2.0"
+  },
+  "devDependencies": {
+    "coveralls": "^2.13.0"
   }
 }

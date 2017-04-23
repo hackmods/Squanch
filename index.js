@@ -21,7 +21,7 @@ module.exports = function(req = '', result) {
    else{
         for (let i = 0; i < text.length; i++)
         {
-            if(rng)
+            if(i == rng)
             {
                 if(text[i].length > 4)
                 {
