@@ -32,7 +32,7 @@ module.exports = function(req = '', result) {
                     let s = 'squanch';
                     if(s.toUpperCase == s)
                         s = 'SQUANCH';
-                    else(s.charAt(0).toUpperCase == s.charAt(0))
+                    else(s.charAt(0).toUpperCase === s.charAt(0))
                         s= 'Squanch';
 
                     if(text[i].substr(text[i].length - 2) == "ed")
