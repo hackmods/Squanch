@@ -23,30 +23,32 @@ module.exports = function(req = '', result) {
         {
             if(i == rng)
             {
-                if(text[i].length > 4)
+                if(text[i].length < 4)
                 {
                         rng++;
                         squanched += `${text[i]} `;
                 }
                 else {
                     let s = 'squanch';
-                    if(s.toUpperCase == s)
+                    if(text[i].toUpperCase() === text[i])
                         s = 'SQUANCH';
-                    else(s.charAt(0).toUpperCase === s.charAt(0))
+                    else if (text[i].substr(0,1).toUpperCase() === text[i].substr(0,1))
                         s= 'Squanch';
 
                     if(text[i].substr(text[i].length - 2) == "ed")
                             squanched += `${s}ed `;
                         else if (text[i].substr(text[i].length - 3) == "ing")
                             squanched += `${s}ing `;
-                        else if (text[i].substr(text[i].length - 3) == "y")
+                        else if (text[i].substr(text[i].length - 2) == "ly")
+                            squanched += `${s}ly `;
+                        else if (text[i].substr(text[i].length - 1) == "y")
                             squanched += `${s}y `;
                         else
                         {
-                            if((rng % 2 == 0) == true)
-                                squanched += `${s} `;
-                            else
+                            if((rng % 3 == 0) == true)
                                 squanched += `${s}y `;
+                            else
+                                squanched += `${s} `;
                         }
                         
 
