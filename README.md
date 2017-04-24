@@ -1,11 +1,16 @@
 # Squanch
-=========
+===================
 
 A package to add some squanch to your output.
 
 ## Installation
 
   `npm install squanch`
+
+### Build Status
+
+Travis CI results:
+[![Build Status](https://travis-ci.org/hackmods/Squanch.svg?branch=master)](https://travis-ci.org/hackmods/Squanch)
 
 ## Usage
 
