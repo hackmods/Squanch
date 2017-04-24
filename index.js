@@ -29,6 +29,15 @@ module.exports = function(req = '', result) {
                         squanched += `${text[i]} `;
                 }
                 else {
+                    //check for case
+                    // str.match(/[a-z]/i
+                    let p = '';
+                    if(text[i].substr(text[i].length - 1).match(/[a-z]/i) == false)
+                    {
+                        p = text[i].substr(text[i].length - 1);
+                    }
+                    
+
                     let s = 'squanch';
                     if(text[i].toUpperCase() === text[i])
                         s = 'SQUANCH';
@@ -36,19 +45,19 @@ module.exports = function(req = '', result) {
                         s= 'Squanch';
 
                     if(text[i].substr(text[i].length - 2) == "ed")
-                            squanched += `${s}ed `;
+                            squanched += `${s}ed${p} `;
                         else if (text[i].substr(text[i].length - 3) == "ing")
-                            squanched += `${s}ing `;
+                            squanched += `${s}ing${p} `;
                         else if (text[i].substr(text[i].length - 2) == "ly")
-                            squanched += `${s}ly `;
+                            squanched += `${s}ly${p} `;
                         else if (text[i].substr(text[i].length - 1) == "y")
-                            squanched += `${s}y `;
+                            squanched += `${s}y${p} `;
                         else
                         {
                             if((rng % 3 == 0) == true)
-                                squanched += `${s}y `;
+                                squanched += `${s}y${p} `;
                             else
-                                squanched += `${s} `;
+                                squanched += `${s}${p} `;
                         }
                         
 
