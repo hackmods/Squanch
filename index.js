@@ -7,7 +7,7 @@
  * @return {string}
  */
 
-module.exports = function(req = '', result) {
+ function Squanch(req = '', result) {
    let text =  req.split(" ");
   
    let rng = 0;
@@ -23,41 +23,57 @@ module.exports = function(req = '', result) {
         {
             if(i == rng)
             {
+                var regLetterPattern = /^[a-zA-Z]+$/; 
+                //var regAplhNumPattern = /^[0-9a-zA-Z]+$/; 
+
+                let p = '';
+                let pre = '';
+                let s = 'squanch';
+
                 if(text[i].length < 4)
                 {
                         rng++;
                         squanched += `${text[i]} `;
                 }
+                else if(!text[i].substr(1, text[i].length - 2).match(regLetterPattern))
+                {
+                    rng++;
+                    squanched += `${text[i]} `;
+                }
                 else {
-                    //check for case
-                    // str.match(/[a-z]/i
-                    let p = '';
-                    if(text[i].substr(text[i].length - 1).match(/[a-z]/i) == false)
+                    if(!text[i].substr(text[i].length - 1).match(regLetterPattern))
                     {
                         p = text[i].substr(text[i].length - 1);
                     }
                     
+                    if(i != (text.length - 1))
+                        p = p + " ";
 
-                    let s = 'squanch';
+                     if(!text[i].substr(0, 1).match(regLetterPattern))
+                    {
+                        pre = text[i].substr(0, 1);
+                    }
+                    
+                    
                     if(text[i].toUpperCase() === text[i])
                         s = 'SQUANCH';
                     else if (text[i].substr(0,1).toUpperCase() === text[i].substr(0,1))
                         s= 'Squanch';
 
                     if(text[i].substr(text[i].length - 2) == "ed")
-                            squanched += `${s}ed${p} `;
+                            squanched += `${pre}${s}ed${p}`;
                         else if (text[i].substr(text[i].length - 3) == "ing")
-                            squanched += `${s}ing${p} `;
+                            squanched += `${pre}${s}ing${p}`;
                         else if (text[i].substr(text[i].length - 2) == "ly")
-                            squanched += `${s}ly${p} `;
+                            squanched += `${pre}${s}ly${p}`;
                         else if (text[i].substr(text[i].length - 1) == "y")
-                            squanched += `${s}y${p} `;
+                            squanched += `${pre}${s}y${p}`;
                         else
                         {
                             if((rng % 3 == 0) == true)
-                                squanched += `${s}y${p} `;
+                                squanched += `${pre}${s}y${p}`;
                             else
-                                squanched += `${s}${p} `;
+                                squanched += `${pre}${s}${p}`;
                         }
                         
 
@@ -70,3 +86,8 @@ module.exports = function(req = '', result) {
     }
     return squanched;
 };
+
+
+console.log(Squanch('#RickandMortyForHundredYears# #HundredYearsRandM# #RickandMortyForHundredYears# #HundredYearsRandM# #RickandMortyForHundredYears# #YearsRandM#'));
+
+module.exports = Squanch;

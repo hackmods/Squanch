@@ -38,6 +38,30 @@ describe('#squanch', function() {
         var result = squanch('Hey Ricked its Ricked, Whated The Secreted Formuled For Creatinged Darked Mattered?');
         expect(result).to.contain('Squanched');
     });
+     it(' Samp1e ** 8 should not contain Squanch', function() {
+        var result = squanch('Samp!e Samp!e Samp!e Samp!e Samp!e Samp!e Samp!e Samp1e Samp1e');
+        expect(result).to.not.contain('squanch');
+    });
+
+    it(' Should not add space to squanch at end of doc', function() {
+        var result = squanch('Samp!e Samp!e Samp!e Samp!e Samp!e Samp!e Samp!e Samp1e realword.');
+        expect(result).to.not.contain('squanch. ');
+    });
+
+     it(' Should squanch hash tags', function() {
+        var result = squanch('#RickandMortyForHundredYears #HundredYearsRandM #RickandMortyForHundredYears #HundredYearsRandM #RickandMortyForHundredYears #YearsRandM.');
+        expect(result).to.contain('#Squanch');
+    });
+
+    it(' Should squanch hash tags', function() {
+        var result = squanch('#RickandMortyForHundredYears# #HundredYearsRandM# #RickandMortyForHundredYears# #HundredYearsRandM# #RickandMortyForHundredYears# #YearsRandM#');
+        expect(result).to.contain('#Squanch#');
+    });
+
+    it(' Should squanch with punctuation !', function() {
+        var result = squanch('Bird! Person! Was! To! Young! Screw! Sammy! And! The! Aliance!');
+        expect(result).to.contain('Squanch!');
+    });
 
 /*
       it('should contain at least one squanching(.)', function() {
@@ -45,5 +69,4 @@ describe('#squanch', function() {
         expect(result).to.contain('squanching');
     });
 */
-
 });

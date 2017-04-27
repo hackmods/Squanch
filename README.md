@@ -1,7 +1,7 @@
 # Squanch
 ===================
 
-A package to add some squanch to your output.
+A NPM package: Sqaunch library will squanch up your text. Get your text squnached for a more fun consolelog. Inspired by Squanchy on Rick and Morty.
 
 ## Installation
 
@@ -25,8 +25,3 @@ Travis CI results:
 ## Tests
 
   `npm test`
-
-## Contributing
-
-In lieu of a formal style guide, take care to maintain the existing coding style.
-Add unit tests for any new or changed functionality. Lint and test your code.
