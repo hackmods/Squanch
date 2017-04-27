@@ -87,7 +87,6 @@
     return squanched;
 };
 
-
-console.log(Squanch('#RickandMortyForHundredYears# #HundredYearsRandM# #RickandMortyForHundredYears# #HundredYearsRandM# #RickandMortyForHundredYears# #YearsRandM#'));
+//console.log(Squanch('#RickandMortyForHundredYears# #HundredYearsRandM# #RickandMortyForHundredYears# #HundredYearsRandM# #RickandMortyForHundredYears# #YearsRandM#'));
 
 module.exports = Squanch;
